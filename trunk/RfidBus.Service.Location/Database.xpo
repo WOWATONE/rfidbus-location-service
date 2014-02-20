@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c289de99-9890-472d-831c-8649649cba1b" dbName="database" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9IkFjY2Vzczk3Ij4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZGF0YWJhc2UiIHZhbHVlPSJEOlx1c2Vyc1xzZHZuXHdvcmtccHJvamVjdHNcUmZpZEJ1cy5TZXJ2aWNlLkxvY2F0aW9uXFJmaWRCdXMuU2VydmljZS5Mb2NhdGlvblxEYXRhYmFzZVxkYXRhYmFzZS5tZGIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZXJpZCIgdmFsdWU9IiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icGFzc3dvcmQiIHZhbHVlPSIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InJlYWQgb25seSIgdmFsdWU9IjEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImdlbmVyYXRlQ29ubmVjdGlvbkhlbHBlciIgdmFsdWU9InRydWUiIC8+DQogIDwvcGFyYW1ldGVyPg0KPC9EZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3M+" namespace="RfidBus.Service.Location.database" connectionString="XpoProvider=MSAccess;Provider=Microsoft.Jet.OLEDB.4.0;Mode=Share Deny None;data source=D:\users\sdvn\work\projects\RfidBus.Service.Location\RfidBus.Service.Location\Database\database.mdb;user id=;password=;" dataBaseShemaInfo="H4sIAAAAAAAEAO1X227bMAx9H7B/MPJc+SLJt8Jx0SXdVqwbijYd9ipLVGrMlgPLTtK/n5ykaZO2W7f1Amx5Mw8PIR6RpsDkYF4W1hRqnVeq3/Nst3eQvn2TvGMazpuqZmM4VrKyDEvp/bnO+73LppnsO85sNrNnxK7qsYNd13O+fT4555dQMpQr3TDFobeOEr+O6plTLSsZsawA3R25sK+RW8A19IWVkI7YWH/MtUn06rTToBtQTeLcENYxR6rD0qZuIXFWxto5zHUHXEwEayCVrNCGtAmuuR/aXByLFAQRkvIYhS7GiBJXoJjTEHkxYzjwJLhZljgr8jp4UBVtqfSGnAdh4+g0LJ3pKBeJc8ve4P1M3e8qvK3SdUHSOKQo8P0YUcwDFAmQKBM0wGEkAkyiOypNuPMXQs+ACahfXiuW0gPBQhTwyEc0iDzEsCtRKLjMPMo4YfiptR4q07CKvbxYJjDnQjIUEh+MWBGjCGMPhVQCoS4PCA+eWuwoL+HllXqmRz1TPBRgn5gfFSIUg/QRJzGN3IAFELmPVnofuho3fzKzdpNqN6l2k2o3qZ5hUj1S6ZEpa/3/yD0BNoXXkYshIKEXE/OrRkYuZBxFhBEEfpwFZhbLGJNnqG599Q9U9zHP7sq+oSTd/gLitK74ArScJfx1ueykQ5gezSc1aG0PWcPsqUdsvGet3P3OskPb3bMGbdG0NfQVtE3Nij3rtM2KnH+Cq1H1HVQ/iyLhhT4VoXmEaGxm5PURi/MGBdMadFeAs3Z9u8mhMKmBzOervJbQeSs3oDMoqylsE5foNndgdrb0QvFLpsZgnuCFvbya+3JIzM1MoG7yV87tgTSSD6CgNu01qMrSbHV61aN34A3yEHQ+Np/vc9MKWxGbPrPkOltbbvoDQwI/6A4PAAA=" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="2780d69c-e89e-4e46-9c8b-b560c18e588c">
+      <xpObject Id="ed3df4c9-7022-430d-9c47-19aa261fe0bb" name="TagsHistory" baseClass="XPObject" userFileName="TagsHistory" designerFileName="TagsHistory.Designer" className="TagsHistory" deferredDeletion="False" persistent="TagsHistory" optimisticLocking="False" virtualName="TagsHistory">
+        <fields>
+          <generalXpObjectHasFields Id="7f667907-0210-41f8-87f9-566fbdb359cb">
+            <field Id="00ef4974-6559-42c6-8def-bd46278d6238" name="Tid" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2927566f-863c-48a2-b884-83d7d392f6c3">
+            <field Id="2ff1eda7-6c85-4681-a20f-7dcfb14ac3a2" name="Reader" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f9893bda-5ff1-4f7f-b7ca-786825c9f89a">
+            <field Id="ad2ccdfa-735e-46d9-8221-74fe340c63c6" name="Antenna" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" isNullable="true" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a4c1aa9e-89a5-4d3c-8165-9d5a6f1cd4b9">
+            <field Id="16231ac3-6253-43e8-9ef5-c394806a6e80" name="EntryTime" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="94e87ad5-4566-4d03-be1d-2d510c0ffe59">
+            <field Id="2e637193-a283-4ebc-83a3-e59b619af923" name="LeaveTime" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" isNullable="true" />
+          </generalXpObjectHasFields>
+        </fields>
+        <indexes>
+          <xpObjectHasIndexes Id="3227d5ea-01e9-4d80-a96b-2b0ac3b07ecb">
+            <index Id="9ffe0891-063d-48b8-ba41-16f8a02b4509" name="ReaderAntennaIndex">
+              <fieldsInIndex>
+                <indexReferencesFields Id="b5c32ef5-462f-40ba-8bc4-05f2895253c9">
+                  <fieldMoniker Id="2ff1eda7-6c85-4681-a20f-7dcfb14ac3a2" />
+                </indexReferencesFields>
+                <indexReferencesFields Id="417ea417-4171-48be-9eaa-1242d0eb8d2d">
+                  <fieldMoniker Id="ad2ccdfa-735e-46d9-8221-74fe340c63c6" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+          <xpObjectHasIndexes Id="e234f119-2f40-4c88-9d87-d9cd305ec64b">
+            <index Id="52d5f88c-8657-470b-96dc-fc9b018cfdcc" name="TidIndex">
+              <fieldsInIndex>
+                <indexReferencesFields Id="cbaa20d4-93e8-4e3b-b0bd-683c4e14baeb">
+                  <fieldMoniker Id="00ef4974-6559-42c6-8def-bd46278d6238" />
+                </indexReferencesFields>
+              </fieldsInIndex>
+            </index>
+          </xpObjectHasIndexes>
+        </indexes>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>
