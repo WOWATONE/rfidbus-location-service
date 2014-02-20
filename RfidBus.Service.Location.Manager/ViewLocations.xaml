@@ -1,0 +1,35 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:manager="clr-namespace:RfidBus.Service.Location.Manager"
+    x:Class="RfidBus.Service.Location.Manager.ViewLocations"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="GeneralResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <dxg:GridControl ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=manager:ViewLocations}, Path=Locations}"
+                         SelectedItems="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=manager:ViewLocations}, Path=SelectedLocations}"
+                         SelectionMode="Row">
+            <dxg:GridControl.Bands>
+                <dxg:GridControlBand>
+                    <dxg:GridColumn dxg:BandBase.GridRow="0" FieldName="Name" SortIndex="0" SortMode="DisplayText" SortOrder="Ascending" />
+                    <dxg:GridColumn dxg:BandBase.GridRow="1" FieldName="Description" CellStyle="{StaticResource DescriptionCellStyle}" />
+                </dxg:GridControlBand>
+            </dxg:GridControl.Bands>
+            <dxg:GridControl.View>
+                <dxg:TableView ShowBandsPanel="False" ShowColumnHeaders="False" ShowGroupPanel="False" AutoWidth="True" ShowVerticalLines="False" ShowHorizontalLines="False"
+                               ShowIndicator="False" NavigationStyle="Row" AllowEditing="False" AllowSorting="False" AllowGrouping="False"
+                               DataRowTemplate="{StaticResource RowWithBottomLineTemplate}" MouseDoubleClick="GridMouseDoubleClick"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</UserControl>

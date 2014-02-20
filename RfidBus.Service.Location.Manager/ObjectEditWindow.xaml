@@ -1,0 +1,35 @@
+﻿<dx:DXWindow
+    x:Class="RfidBus.Service.Location.Manager.ObjectEditWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:loc="clr-namespace:RfidBus.Service.Location.Manager.Properties"
+    WindowStartupLocation="CenterOwner" Height="300" Width="450"
+    ShowIcon="False"
+    Title="{x:Static loc:Resources.ObjectEditWindow_Title}"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <dxlc:LayoutControl Grid.Row="0" Orientation="Vertical" ItemSpace="10">
+            <dxlc:LayoutItem Label="{x:Static loc:Resources.Name}">
+                <dxe:TextEdit EditValue="{Binding Object.Name}" AllowNullInput="False" />
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Label="{x:Static loc:Resources.Tid}">
+                <dxe:TextEdit EditValue="{Binding Object.Tid}" MaskType="RegEx" Mask="([0-9a-z]{2,2})+" AllowNullInput="True" />
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Label="{x:Static loc:Resources.Description}" LabelVerticalAlignment="Top">
+                <dxe:TextEdit EditValue="{Binding Object.Description}" AllowNullInput="True"
+                              AcceptsReturn="True" Height="70" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" />
+            </dxlc:LayoutItem>
+        </dxlc:LayoutControl>
+        <Button Grid.Row="1" Content="{x:Static loc:Resources.OK}" Margin="0,0,90,10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="70" Height="24"
+                Command="{Binding OkCommand}" IsDefault="True" />
+        <Button Grid.Row="1" Content="{x:Static loc:Resources.Cancel}" Margin="0,0,10,10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="70" Height="24" IsCancel="True"
+                IsDefault="False" />
+    </Grid>
+</dx:DXWindow>
