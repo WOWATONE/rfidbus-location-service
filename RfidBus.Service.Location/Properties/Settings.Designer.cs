@@ -86,14 +86,5 @@ namespace RfidBus.Service.Location.Properties {
                 return ((int)(this["BusRestoreConnectionInterval"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("{D148886C-9C79-41C6-B8C6-DF6F4ADB35ED}")]
-        public string BusSerializer {
-            get {
-                return ((string)(this["BusSerializer"]));
-            }
-        }
     }
 }
