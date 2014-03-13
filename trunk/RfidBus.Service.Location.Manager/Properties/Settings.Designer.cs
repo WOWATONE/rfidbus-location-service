@@ -68,14 +68,5 @@ namespace RfidBus.Service.Location.Manager.Properties {
                 return ((string)(this["BusPassword"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("{D148886C-9C79-41C6-B8C6-DF6F4ADB35ED}")]
-        public string BusSerializator {
-            get {
-                return ((string)(this["BusSerializator"]));
-            }
-        }
     }
 }

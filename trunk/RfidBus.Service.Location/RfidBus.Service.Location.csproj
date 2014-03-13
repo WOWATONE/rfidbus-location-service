@@ -70,8 +70,8 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v13.1, Version=13.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -79,22 +79,20 @@
     <Reference Include="protobuf-net">
       <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
     </Reference>
-    <Reference Include="RfidBus.Primitives, Version=2.5.0.5, Culture=neutral, PublicKeyToken=c77c3fea3fdc4436, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RfidBus.Primitives.2.5.0.5\lib\net45\RfidBus.Primitives.dll</HintPath>
+    <Reference Include="RfidBus.Primitives">
+      <HintPath>..\packages\RfidBus.Primitives.3.0.0.0\lib\net45\RfidBus.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="RfidBus.Serializers.Pb">
-      <HintPath>..\packages\RfidBus.Serializers.Pb.2.5.0.1\lib\net45\RfidBus.Serializers.Pb.dll</HintPath>
+      <HintPath>..\packages\RfidBus.Serializers.Pb.3.0.0.0\lib\net45\RfidBus.Serializers.Pb.dll</HintPath>
     </Reference>
     <Reference Include="RfidCenter.Basic">
-      <HintPath>..\packages\RfidCenter.Basic.dll.1.0.5.1\lib\net40\RfidCenter.Basic.dll</HintPath>
+      <HintPath>..\packages\RfidCenter.Basic.dll.1.0.8.1\lib\net40\RfidCenter.Basic.dll</HintPath>
     </Reference>
-    <Reference Include="RfidCenter.Devices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c77c3fea3fdc4436, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RfidCenter.Devices.2.0.0.0\lib\net40\RfidCenter.Devices.dll</HintPath>
+    <Reference Include="RfidCenter.Devices">
+      <HintPath>..\packages\RfidCenter.Devices.2.0.1.1\lib\net40\RfidCenter.Devices.dll</HintPath>
     </Reference>
     <Reference Include="RfidCenter.Printing">
-      <HintPath>..\packages\RfidCenter.Printing.1.4.0.3\lib\net40\RfidCenter.Printing.dll</HintPath>
+      <HintPath>..\packages\RfidCenter.Printing.1.5.0.0\lib\net40\RfidCenter.Printing.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -136,6 +134,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="TranspondersEventArgs.cs" />
   </ItemGroup>

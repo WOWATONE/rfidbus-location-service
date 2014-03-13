@@ -23,8 +23,5 @@
     <Setting Name="BusRestoreConnectionInterval" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">120</Value>
     </Setting>
-    <Setting Name="BusSerializer" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">{D148886C-9C79-41C6-B8C6-DF6F4ADB35ED}</Value>
-    </Setting>
   </Settings>
 </SettingsFile>

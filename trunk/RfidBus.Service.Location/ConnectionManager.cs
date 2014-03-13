@@ -14,8 +14,10 @@ using RfidBus.Primitives.Messages;
 using RfidBus.Primitives.Messages.Bus;
 using RfidBus.Primitives.Messages.Readers;
 using RfidBus.Primitives.Network;
+using RfidBus.Serializers.Pb;
 
 using RfidCenter.Basic;
+using RfidCenter.Basic.Arguments;
 
 namespace RfidBus.Service.Location
 {
@@ -42,9 +44,6 @@ namespace RfidBus.Service.Location
         private CancellationTokenSource _cancellationTokenSource;
         private RfidBusClient _client;
 
-        [ImportMany(typeof(IProtocolSerializer), AllowRecomposition = true)]
-        private IEnumerable<IProtocolSerializer> AvailableSerializers { get; set; }
-
         public event EventHandler<TranspondersEventArgs> TranspondersFound;
         public event EventHandler<TranspondersEventArgs> TranspondersLost;
 
@@ -58,36 +57,24 @@ namespace RfidBus.Service.Location
             this.EnqueueConnectAction();
         }
 
-        private IProtocolSerializer FindSerializer()
-        {
-            Contract.Requires<ArgumentException>(!string.IsNullOrWhiteSpace(Properties.Settings.Default.BusSerializer), "BusSerializer has be specified.");
-            Contract.Ensures(Contract.Result<IProtocolSerializer>() != null, "Serializator not found.");
-
-            var directoryCatalog = new DirectoryCatalog(Tools.CurrentDirectory);
-            var pluginsContainer = new CompositionContainer(directoryCatalog);
-            pluginsContainer.ComposeParts(this);
-
-            var serializerId = Guid.Parse(Properties.Settings.Default.BusSerializer);
-
-            return this.AvailableSerializers.FirstOrDefault(ser => ser.Id == serializerId);
-        }
-
         private void OpenClient()
         {
             this.CloseClient();
 
             lock (this)
             {
-                this._client = new RfidBusClient(Properties.Settings.Default.BusHost,
-                                                 Properties.Settings.Default.BusPort,
-                                                 this.FindSerializer());
+                var pbCommunication = new PbCommunicationDescription();
+                var config = new ParametersValues(pbCommunication.GetClientConfiguration());
+                config.SetValue(ConfigConstants.PARAMETER_HOST, Properties.Settings.Default.BusHost);
+                config.SetValue(ConfigConstants.PARAMETER_PORT, Properties.Settings.Default.BusPort);
+
+                this._client = new RfidBusClient(pbCommunication, config);
                 if (!this._client.Authorize(Properties.Settings.Default.BusLogin, Properties.Settings.Default.BusPassword))
                     throw new BaseException(RfidErrorCode.InvalidLoginAndPassword);
 
                 this.SubscribeToReaders();
 
                 this._client.ReceivedEvent += this.ClientOnReceivedEvent;
-                this._client.ConnectionClosed += this.ClientOnConnectionClosed;
                 this._client.Reconnected += this.ClientOnReconnected;
                 this._client.Disconnected += this.ClientOnDisconnected;
             }
@@ -109,7 +96,6 @@ namespace RfidBus.Service.Location
                     return;
 
                 this._client.ReceivedEvent -= this.ClientOnReceivedEvent;
-                this._client.ConnectionClosed -= this.ClientOnConnectionClosed;
                 this._client.Reconnected -= this.ClientOnReconnected;
                 this._client.Disconnected -= this.ClientOnDisconnected;
 
@@ -216,11 +202,6 @@ namespace RfidBus.Service.Location
         private void ClientOnReconnected(object sender, EventArgs e)
         {
             BaseTools.Log.Warn("Connection to RFID Bus restored.");
-        }
-
-        private void ClientOnConnectionClosed(object sender, EventArgs e)
-        {
-            BaseTools.Log.Warn("Connection to RFID Bus was closed. Trying to reconnect.");
         }
 
         private void OnTranspondersFound(TranspondersEventArgs e)
